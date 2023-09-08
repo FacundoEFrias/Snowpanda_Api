@@ -18,7 +18,7 @@ const swaggerSpec = {
     },
     server:[
       {
-        url: "https://localhost:3000"
+        url: "snowpandaapi-production.up.railway.app"
       }
     ]
   },
