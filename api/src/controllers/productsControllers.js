@@ -16,9 +16,15 @@ const getProductsByCategory = async (req, res) => {
   try {
     const allData = await Products.findAll({});
     const productsCategory = allData.filter((e) => e.category === access);
-    res.status(200).json(productsCategory);
+    if (productsCategory.length === 0) {
+      // No se encontraron productos para la categoría
+      res.status(404).json({ message: "Productos no encontrados." });
+    } else {
+      // Se encontraron productos para la categoría
+      res.status(200).json(productsCategory);
+    }
   } catch (err) {
-    res.status(404).json(err.message);
+    res.status(500).json(err.message);
   }
 };
 //!! GET de por marca
