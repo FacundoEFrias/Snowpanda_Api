@@ -25,7 +25,7 @@ const swaggerSpec = {
   apis:[`${path.join(__dirname,"./routes/*.js")}`]
 
 }
-//server.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJsDoc(swaggerSpec)));
+server.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJsDoc(swaggerSpec)));
 
 require("./db.js");
 
