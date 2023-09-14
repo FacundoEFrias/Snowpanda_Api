@@ -34,9 +34,13 @@ const getProductsByBrand = async (req, res) => {
   try {
     const allData = await Products.findAll({});
     const productsBrand = allData.filter((e) => e.brand.brandName === access);
+    if(productsBrands.length === 0) {
+      res.status(404).json({message: "Productos no encontrados")};
+    }else {
+      
     res.status(200).json(productsBrand);
-  } catch (err) {
-    res.status(404).json(err.message);
+    } } catch (err) {
+    res.status(500).json(err.message);
   }
 };
 
