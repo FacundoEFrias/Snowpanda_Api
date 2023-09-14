@@ -73,22 +73,22 @@ router.get('/category/:access', getProductsByCategory);
 
 /**
  * @swagger
- * /products/brand{access}:
+ * /products/brand/{access}:
  *   get:
  *     tags:
  *       - Products
  *     summary: Obtener productos por marca
- *     description: Obtiene todos los productos de una marca especificada.
+ *     description: Obtiene productos por marca.
  *     parameters:
- *       - in: path
- *         name: access
+ *       - name: access
+ *         in: path
+ *         required: true
+ *         description: Nombre de la marca para filtrar productos.
  *         schema:
  *           type: string
- *         required: true
- *         description: Marca de los productos a obtener.
  *     responses:
  *       200:
- *         description: Productos encontrados exitosamente.
+ *         description: Productos obtenidos exitosamente.
  *         content:
  *           application/json:
  *             schema:
@@ -96,15 +96,7 @@ router.get('/category/:access', getProductsByCategory);
  *               items:
  *                 $ref: '#/components/schemas/Product'
  *       404:
- *         description: No se encontraron productos o marca no válida.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   description: Descripción del error.
+ *         description: No se encontraron productos o se produjo un error.
  */
 
 router.get('/brand/:access', getProductsByBrand);
