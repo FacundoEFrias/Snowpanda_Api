@@ -20,7 +20,7 @@ const router = Router();
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Product'
+ *                 $ref: '#/components/schemas/products'
  *       404:
  *         description: Productos no encontrados.
  *         content:
@@ -57,7 +57,7 @@ router.get('/', getAllProducts)
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Product'
+ *                 $ref: '#/components/schemas/products'
  *       404:
  *         description: Productos no encontrados.
  *         content:
