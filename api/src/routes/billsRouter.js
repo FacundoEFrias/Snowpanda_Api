@@ -26,7 +26,7 @@ const router = Router();
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Bills'
+ *                 $ref: '#/components/schemas/Bill'
  *       404:
  *         description: No se encontraron facturas.
  */
