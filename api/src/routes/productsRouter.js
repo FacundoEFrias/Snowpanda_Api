@@ -80,8 +80,8 @@ router.get('/category/:access', getProductsByCategory);
  *     summary: Obtener productos por marca
  *     description: Obtiene productos por marca.
  *     parameters:
- *       - name: access
- *         in: path
+ *       - in: path name: access
+ *         name: access
  *         required: true
  *         description: Nombre de la marca para filtrar productos.
  *         schema:
