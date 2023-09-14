@@ -6,7 +6,7 @@ const router = Router();
 
 /**
  * @swagger
- * /products/filter:
+ * /filtrado:
  *   get:
  *     tags:
  *       - Products
