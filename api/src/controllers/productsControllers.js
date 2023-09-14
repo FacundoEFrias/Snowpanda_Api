@@ -27,7 +27,7 @@ const getProductsByBrand = async (req, res) => {
   const { access } = req.params;
   try {
     const allData = await Products.findAll({});
-    const productsBrand = allData.filter((e) => e.brand === access);
+    const productsBrand = allData.filter((e) => e.brand.brandName === access);
     res.status(200).json(productsBrand);
   } catch (err) {
     res.status(404).json(err.message);
